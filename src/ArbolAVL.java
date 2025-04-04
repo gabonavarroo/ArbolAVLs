@@ -1,34 +1,33 @@
-
-
 import java.util.LinkedList;
 import java.util.Queue;
 /**
- * Clase que implementa un arbol AVL
- * @param <T> Tipo de dato que almacena el arbol AVL
- * @author Saul Ubaldo Rojas Vazquez
- * @created 14/03/2025
+ * Implementación de un Arbol Binario AVL
+ * @param <T> Tipo de dato que se almacenará en el Árbol AVL
+ * @author Gabriel Navarro Cerón
+ * @created 23/03/2025
  */
+
 public class ArbolAVL<T extends Comparable<T>> {
-    private int cont; // numero de elementos del arbol AVL
+    private int cont; //total de elementos del arbol AVL
     private NodoAVL<T> raiz; // nodo raiz del arbol
 
     public ArbolAVL() {
         this.cont = 0;
         this.raiz = null;
     }
-      /**
-     * Indica si el elemento existe en el arbol
-     * @return True si está el elemento, false si no
+
+    /**
+     * Método que indica si el elemento existe en el arbol
+     * @return True si se encuentra el elemento, False si no
      */
     public boolean busca(T element){
         return busca(element,raiz) != null;
     }
 
     /**
-     * Devuelve el nodo del elemento buscado
-     * @return nodo buscado
+     * Método que devuelve el nodo que contenga al elemento buscado
+     * @return Nodo con el elemento buscado
      */
-
     private NodoAVL<T> busca(T element,NodoAVL<T> actual){
         if(actual == null)
             return null;
@@ -39,7 +38,6 @@ public class ArbolAVL<T extends Comparable<T>> {
         return busca(element,actual.getIzq());
     }
 
-    
     /**
      * Método que realiza la rotación para los casos izq-der, der-izq
      * @param alpha si es el caso izq-der, beta si es el caso der-izq

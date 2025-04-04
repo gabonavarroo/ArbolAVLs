@@ -1,21 +1,20 @@
 
 /**
- * Clase que representa un nodo de un arbol AVL
+ * Clase para estructurar un Nodo para la implementación de un Árbol Binario AVL
  * @param <T> Tipo de dato que almacena el nodo
- * @author Saul Ubaldo Rojas Vazquez
- * @created 14/03/2025
+ * @author Gabriel Navarro Cerón
+ * @created 23/03/2025
  */
 
 public class NodoAVL<T extends Comparable<T>> {
-    T elem;
-    NodoAVL<T> izq, der, papa;
-    private int factorEquilibrio;
-
+    T elem; // Elemento del Nodo
+    NodoAVL<T> izq, der, papa; //Nodos a la izquierda, derecha y el Nodo que se encuentra
+    //directamente arriba de él
+    private int factorEquilibrio; //Determina la diferencia entre niveles de Nodos hijos del lado derecho e izquierdo
       /**
-     * Constructor del nodo
+     * Constructor del Nodo
      * @param dato: dato T que almacena el nodo
      */
-
     public NodoAVL(T elem) { 
         this.elem = elem;
         this.izq = null;
@@ -78,7 +77,7 @@ public class NodoAVL<T extends Comparable<T>> {
     }
 
       /**
-     * Método que cuelga un nodo debajo
+     * Método que "cuelga" un nodo debajo, es decir, vincula las direcciones hijo-padre
      * @param hijo Nodo que se quiere colgar
      * @param lado designa el lado del que se quiere colgar el nodo
      */
